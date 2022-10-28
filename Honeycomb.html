@@ -1,0 +1,154 @@
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+
+    <title>!!Honeycomb!!</title>
+
+    <style>
+        body{
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRalEKqojuYi1mf1qyOFMJCnEkpd65G_dre6g&usqp=CAU);
+        }
+      h1{
+            text-align: center;
+            background-color:tomato;
+            color: cornsilk;
+            font-size: 50px;
+            font-family:cursive;
+            padding: 5px;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+        p{
+            text-align: center;
+            font-size: 20px;
+        }
+        body{
+            background-color: cornsilk;
+        }
+        section{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .guessSubmit{
+            height: 50px;
+            width: 50px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            background-color:darkorange;
+            border-radius: 10px;
+            box-shadow: 10px 10px 8px ;
+
+        }
+        button:hover{
+            background-color: yellow;
+        }
+        .lastResult {
+        padding: 3px;
+        font-weight: bold;
+        font-style: italic;
+        }
+        .guesses{
+        padding: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>!!Honeycomb!!</h1>
+    <p>Click on any of the honeycombs and test your luck 😉
+    </p>
+    <p>Can you score >10 ? 😏</p>
+    <div class="form">
+      <section>
+      <button class="guessSubmit" id="b1"></button>
+      <button class="guessSubmit" id="b2"></button>
+      </section>
+      <section>
+      <button class="guessSubmit" id="b3"></button>
+      <button class="guessSubmit" id="b4"></button>
+      <button class="guessSubmit" id="b5"></button>
+      <button class="guessSubmit" id="b6"></button>
+      </section>
+      <section>
+      <button class="guessSubmit" id="b7"></button>
+      <button class="guessSubmit" id="b8"></button>
+      <button class="guessSubmit" id="b9"></button>
+      </section>
+      <section>
+      <button class="guessSubmit" id="b10"></button>
+      <button class="guessSubmit" id="b11"></button>
+      <button class="guessSubmit" id="b12"></button>
+      <button class="guessSubmit" id="b13"></button>
+      </section>
+      <section>
+      <button class="guessSubmit" id="b14"></button>
+      <button class="guessSubmit" id="b15"></button>
+      <button class="guessSubmit" id="b16"></button>
+      </section>
+      <section>
+      <button class="guessSubmit" id="b17"></button>
+      <button class="guessSubmit" id="b18"></button>
+      </section>
+    </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
+
+    <script>
+      let randomNumber = Math.floor(Math.random() *5) + 1;
+      const guesses = document.querySelector('.guesses');
+      const lastResult = document.querySelector('.lastResult');
+      const scores = document.querySelector('.lowOrHi');
+      const guessSubmit = document.querySelector('.guessSubmit');
+      const guessField = document.querySelector('.guessField');
+      let guessCount = 0;
+      let resetButton;
+      function checkGuess() {
+        let randomNumber1 = Math.floor(Math.random() *5) + 1;
+        const userGuess = Number(randomNumber1);
+        if (userGuess === randomNumber) {
+          lastResult.textContent = '!!Game Over!! 💀:(';
+          lastResult.style.backgroundColor = 'red';
+          guessCount=0;
+        }else {
+          lastResult.textContent = '!good job! 😎 ;)';
+          lastResult.style.backgroundColor = 'green';
+          guessCount+=1;
+          guesses.textContent = 'score: '+ guessCount;
+        }
+        if(guessCount>=10){
+          lastResult.textContent = '🎉🎉!!You Win!! 🎉🎉;)';
+          lastResult.style.backgroundColor = 'green';
+          guessCount=0;
+        }
+      }
+      b1.addEventListener('click', checkGuess);
+      b2.addEventListener('click', checkGuess);
+      b3.addEventListener('click', checkGuess);
+      b4.addEventListener('click', checkGuess);
+      b5.addEventListener('click', checkGuess);
+      b6.addEventListener('click', checkGuess);
+      b7.addEventListener('click', checkGuess);
+      b8.addEventListener('click', checkGuess);
+      b9.addEventListener('click', checkGuess);
+      b10.addEventListener('click', checkGuess);
+      b11.addEventListener('click', checkGuess);
+      b12.addEventListener('click', checkGuess);
+      b13.addEventListener('click', checkGuess);
+      b14.addEventListener('click', checkGuess);
+      b15.addEventListener('click', checkGuess);
+      b16.addEventListener('click', checkGuess);
+      b17.addEventListener('click', checkGuess);
+      b18.addEventListener('click', checkGuess);
+
+    </script>
+  
+
+</body></html>
